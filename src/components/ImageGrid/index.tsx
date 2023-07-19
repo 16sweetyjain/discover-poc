@@ -1,7 +1,7 @@
 "use client";
 import ImageComponent from "@/components/ImageGrid/ImageComponent";
 import { Flex, Button } from '@/libs/spectrum';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 
 import style from './image-grid.module.scss';
 import { usePathname } from "next/navigation";
@@ -24,6 +24,8 @@ const imageGrid = ({ query }: { query?: string }) => {
     const router = useRouter();
     let [selectedKeys, setSelectedKeys] = React.useState(new Set<string>([]));
 
+    const firstRenderRef = useRef(true);
+
     let selectedKeyId = Array.from(selectedKeys)[0];
     
     let locale = 'en';
@@ -31,7 +33,7 @@ const imageGrid = ({ query }: { query?: string }) => {
     const parts = pathUrl.split('/');
     locale = parts[1];
 
-    let customHref = 'https://cc-api-cp-stage.adobe.io/api/v2/psx/assets?size=25&sort=defined.popular'
+    let customHref = 'https://cc-api-cp-stage.adobe.io/api/v2/psx/assets?size=25'
     if (query && query!=="all") {
         customHref += `&query=${query}`;
     }
@@ -39,7 +41,12 @@ const imageGrid = ({ query }: { query?: string }) => {
     const [href, setHref] = useState(customHref);
 
     useEffect(() => {
-        fetchImages();
+        if (firstRenderRef.current) {
+            // This block will only run on the first render
+            fetchImages();
+            firstRenderRef.current = false;
+            console.log('PRINTING FROM USEEFFECT');
+        }
     }, []);
 
     const fetchImages = async () => {
@@ -86,7 +93,7 @@ const imageGrid = ({ query }: { query?: string }) => {
                 onSelectionChange={(value:Set<string>) => setSelectedKeys(value)}
             >
                 {(item) => (
-                    <Card key={Math.random()}>
+                    <Card key={item.id}>
                         <Image src={item.url} />
                         {/* <Heading>Shaggy Horse</Heading> */}
                         {/* <Text slot="detail">JPEG</Text> */}
