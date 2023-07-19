@@ -1,0 +1,27 @@
+@import '@/styles/utils.scss';
+
+
+.innerDiv {
+    @include container(95%);
+
+    @include mq(L) {
+        @include container(80%);
+    }
+}
+
+.hashTag {
+    color: var(--hash-tag-color);
+
+    >span {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    >span:hover {
+        opacity: 0.7;
+    }
+
+    >span:active {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,29 @@
+@import '@/styles/utils.scss';
+
+.main {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.grid {
+    display: block;
+    column-count: 1;
+    column-gap: 10px;
+
+    @include mq(S) {
+        column-count: 2;
+    }
+
+    @include mq(M) {
+        column-count: 3;
+    }
+
+    @include mq(L) {
+        column-count: 4;
+    }
+
+    @include mq(XL) {
+        column-count: 5;
+    }
+} 

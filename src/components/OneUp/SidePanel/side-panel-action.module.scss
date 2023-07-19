@@ -1,0 +1,10 @@
+@import '@/styles/utils.scss';
+
+
+.innerDiv {
+    @include container(95%);
+
+    @include mq(L) {
+        @include container(80%);
+    }
+} 

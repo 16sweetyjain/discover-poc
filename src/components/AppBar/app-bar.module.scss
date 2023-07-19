@@ -1,0 +1,10 @@
+@import "@/styles/utils.scss";
+.logo{
+   height: 100%;
+   width: auto;
+}
+
+.appBar {
+   background-color: var(--main-header-bg-color);
+   z-index: 10;
+}

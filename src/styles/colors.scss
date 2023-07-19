@@ -1,0 +1,17 @@
+:root {
+    --primary-color: white;
+    --secondary-color: black;
+    --main-header-bg-color: white;
+    --main-header-bottom-border-color: grey;
+    --hash-tag-color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: black;
+        --secondary-color: white;
+        --main-header-bg-color: black;
+        --main-header-bottom-border-color: rgb(142, 136, 136);
+        --hash-tag-color: white;
+    }
+}

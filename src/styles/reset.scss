@@ -1,0 +1,54 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ol,
+ul,
+li,
+form,
+label,
+header,
+footer,
+nav,
+section,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: unset;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+article,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+
+a,
+ol,
+ul {
+    list-style: none;
+    text-decoration: none;
+}

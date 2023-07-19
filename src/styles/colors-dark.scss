@@ -1,0 +1,15 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --gray-1 : #191919;
+        --blue-2: #378ef0;
+        --gray-14 : #999999;
+        --primary-color: black;
+        --secondary-color: white;
+        --main-header-bg-color: black;
+        --main-header-bottom-border-color: rgb(142, 136, 136);
+        --footer-background-color: var(--gray-1);
+        --footer-text-color: var(--gray-14);
+        --footer-language-input-text-color: var(--blue-2);
+        --category-color:var(--gray-1)
+    }
+}

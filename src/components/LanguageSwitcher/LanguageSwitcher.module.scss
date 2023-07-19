@@ -1,0 +1,28 @@
+$footer-sibling-child-inner-spacing--margin-left-px: 8px;
+$languageselector-container--min-width-px: 150px;
+$languageselector--width-percent: 100%;
+
+:local {
+    .languageInput {
+        color: var(--footer-language-input-text-color);
+        margin-left: $footer-sibling-child-inner-spacing--margin-left-px;
+        cursor: pointer;
+    }
+
+    .languageSelectorContainer {
+        text-align: center;
+        padding: 0 !important;
+        min-width: $languageselector-container--min-width-px;
+    }
+
+    .languageSelector {
+        width: $languageselector--width-percent;
+    }
+
+    // @include mobile-styles {
+    //     .languageSelectorContainer.languageSelectorContainer {
+    //         min-width: 185px;
+    //         max-height: var(--languageSelectorHeight) !important;
+    //     }
+    // }
+}

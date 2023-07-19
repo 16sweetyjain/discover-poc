@@ -1,0 +1,37 @@
+@import '@/styles/utils.scss';
+
+.outerDiv {
+    box-shadow: 0px 9px 9px rgba(black, 0.1);
+
+    @include mq(L) {
+        box-shadow: unset;
+    }
+}
+
+.innerDiv {
+    @include container(95%);
+
+    @include mq(L) {
+        @include container(80%);
+    }
+}
+
+.profile {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 0px 0px 3px black;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.moreBtn {
+    border: none !important;
+}
